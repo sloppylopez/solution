@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthorsComponent } from './authors.component';
-import {NO_ERRORS_SCHEMA} from "@angular/core";
 import {AuthorService} from "./authors.service";
 
 describe('AuthorsComponent', () => {
