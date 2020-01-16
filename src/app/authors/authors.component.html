@@ -1,6 +1,7 @@
-<ul>
-  <li>Author1</li>
-  <li>Author2</li>
-  <li>Author3</li>
-  <li>Author4</li>
+<h2 >Authors</h2>
+
+<ul class="list-group">
+  <li class="list-group-item list-group-item-action" *ngFor="let author of authors">
+    {{author.name}}
+  </li>
 </ul>

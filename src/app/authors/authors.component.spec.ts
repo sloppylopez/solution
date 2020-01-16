@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthorsComponent } from './authors.component';
 import {NO_ERRORS_SCHEMA} from "@angular/core";
+import {AuthorService} from "./authors.service";
 
 describe('AuthorsComponent', () => {
   let component: AuthorsComponent;
@@ -9,10 +10,18 @@ describe('AuthorsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthorsComponent ],
-      schemas: [NO_ERRORS_SCHEMA]
+      declarations: [ AuthorsComponent],
+      providers: [AuthorService]
     })
     .compileComponents();
+
+    TestBed.overrideComponent(AuthorsComponent, {
+      set: {
+        providers: [
+          { provide: AuthorService, useClass: AuthorService }
+        ]
+      }
+    });
   }));
 
   beforeEach(() => {
